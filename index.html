@@ -11,12 +11,17 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="login.html" class="cyan-text">Login</a></li>
+    <li><a href="signup.html" class="cyan-text">Signup</a></li>
+  <li><a href="ace_test/index.html" class="cyan-text">Ace</a></li>
+  </ul>
   <nav class="cyan darken-3" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="index.html" class="brand-logo white-text">Jr. Devs</a>
+    <div class="nav-wrapper">
+      <a id="logo-container" href="index.html" class="brand-logo white-text ">Jr. Devs</a>
       <ul class="right hide-on-med-and-down ">
-        <li><a href="login.html" class="white-text">Login</a></li>
-        <li><a href="signup.html" class="white-text">Signup</a></li>
+        <li><a href="badges.html"><i class="material-icons white-text">view_module</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right white-text">more_verts</i></a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
@@ -35,7 +40,7 @@
           <h5 class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
         </div>
         <div class="row center">
-          <a href="" id="download-button" class="btn-large waves-effect waves-light cyan accent-3">Get Started</a>
+          <a href="signup.html" id="download-button" class="btn-large waves-effect waves-light cyan accent-3">Get Started</a>
         </div>
         <br><br>
 
@@ -131,8 +136,8 @@
         <div class="col l3 s12 right">
           <h5 class="white-text">Getting Started</h5>
           <ul>
-            <li><a class="white-text" href="#!">Sign Up</a></li>
-            <li><a class="white-text" href="#!">Login</a></li>
+            <li><a class="white-text" href="signup.html">Sign Up</a></li>
+            <li><a class="white-text" href="login.html">Login</a></li>
           </ul>
         </div>
       </div>

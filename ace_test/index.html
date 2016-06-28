@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ACE in Action</title>
+    <style type="text/css" media="screen">
+      #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/ace/1.2.3/min/ace.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="../login.html" class="cyan-text">Login</a></li>
+      <li><a href="../signup.html" class="cyan-text">Signup</a></li>
+      <li><a href="ace_test/index.html" class="cyan-text">Ace</a></li>
+    </ul>
+    <nav class="cyan darken-3" role="navigation">
+      <div class="nav-wrapper">
+        <a id="logo-container" href="../index.html" class="brand-logo white-text">Jr. Devs</a>
+        <ul class="right hide-on-med-and-down ">
+          <li><a href="badges.html"><i class="material-icons white-text">view_module</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right white-text">more_verts</i></a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#" class="white-text">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+    
+    <div class="row">
+      <div class="col m6">
+        <div id="editor">def sum(num1, num2)
+  num1 + num2
+end</div>
+      </div>
+      <div class="col offset-m6 console">
+        <h6>Console</h6>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn" id="submit">Run</button>
+    </div>
+        
+    <footer class="page-footer cyan darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Company Bio</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+
+          </div>
+          <div class="col l3 s12 right">
+            <h5 class="white-text">Getting Started</h5>
+            <ul>
+              <li><a class="white-text" href="../signup.html">Sign Up</a></li>
+              <li><a class="white-text" href="../login.html">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        Made by <a class="white-text" href="http://materializecss.com">Materialize</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/crimson_editor");
+      editor.getSession().setMode("ace/mode/ruby");
+      editor.getSession().setTabSize(2);
+      editor.commands.addCommand({
+        name: 'myCommand',
+        bindKey: {win: 'Ctrl-return',  mac: 'Command-return'},
+        exec: function(editor) {
+          console.log(editor.getValue());
+        },
+        readOnly: true // false if this command should not apply in readOnly mode
+      });
+    </script>
+    <script>
+      $(document).ready( function() {
+        $(".dropdown-button").dropdown();
+        $('#submit').click( function() {
+          console.log(editor.getValue());
+        })
+      })
+    </script>
+  </body>
+</html>
